@@ -11,6 +11,150 @@
 */
 
 .page {
+  padding: 100px 0px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  margin: 0 auto;
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--font-weight-regular);
+}
+
+.container {
+    width: var(--container-width);
+    margin: 0 auto;
+}
+
+button {
+  border: 2px solid #000;
+  outline: none;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* HEADER */
+
+.header {
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: clamp(325px, 40vw, 368px);
+  border: 2px solid #000;
+  text-align: center;
+  background-color: #fff;
+  text-transform: uppercase;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header__title {
+  font-size: clamp(3rem, 8vw, 4rem);
+  font-family: var(--font-accent);
+}
+
+.header__subtitle {
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  font-family: var(--font-accent);
+}
+
+/* CARDS */
+
+.cards {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+.card__title {
+  padding: 4px 10px;
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--font-weight-bold);
+}
+
+.card__img {
+  position: relative;
+}
+
+.card__img img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: var(--font-accent);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: 0 0 1px var(--text-stroke-color);
+
+  @supports (text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color)) {
+        text-shadow: none;
+        -webkit-text-stroke: 1px var(--text-stroke-color);
+        text-stroke: 1px var(--text-stroke-color);
+  }
+}
+
+.card__footer {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card__button {
+  padding: 10px 35px;
+  align-self: end;
+}
+
+.button-save {
+  display: block;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+dialog {
+  padding: 30px;
+  max-inline-size: 353px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+}
+
+.dialog__content {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  text-transform: uppercase;
 }
