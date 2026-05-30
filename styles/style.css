@@ -311,7 +311,7 @@ button {
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: center;
-  inline-size: 130px;
+  min-inline-size: 130px;
 }
 
 .button-save {
@@ -356,4 +356,10 @@ dialog::backdrop {
   padding-bottom: 12px;
   inline-size: 100%;
   text-transform: uppercase;
+}
+
+@media (width <= 375px) {
+  .button-save {
+    flex-direction: column;
+  }
 }
