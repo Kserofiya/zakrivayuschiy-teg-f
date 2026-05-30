@@ -37,9 +37,7 @@ button {
   cursor: pointer;
 }
 
-.button-save,
-.card__like-button,
-.dialog__button {
+.button {
   position: relative;
   border: 2px solid #000;
   font-family: var(--font-accent);
@@ -50,9 +48,16 @@ button {
   isolation: isolate;
 }
 
-.button-save::before,
-.card__like-button::before,
-.dialog__button::before {
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -66,36 +71,16 @@ button {
   z-index: 1;
 }
 
-.button-save:hover::before,
-.card__like-button:hover::before,
-.dialog__button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 
-.button-save .button__text,
-.button-save .button-text,
-.button-save .button-save__icon,
-.card__like-button .button__text,
-.dialog__button .button__text,
-.dialog__button .button-text,
-.dialog__button .button-save__icon {
+.button .button__text,
+.button .button-save__icon {
   position: relative;
   color: #ffffff;
   z-index: 2;
   mix-blend-mode: difference;
-}
-
-.button-save:focus,
-.card__like-button:focus,
-.dialog__button:focus {
-  outline: none;
-}
-
-.button-save:focus-visible,
-.card__like-button:focus-visible,
-.dialog__button:focus-visible {
-  outline: none;
-  box-shadow: 2px 2px 0 0 #000;
 }
 
 .card__icon-button {
@@ -119,12 +104,13 @@ button {
 }
 
 .header {
+  padding-top: 130px;
+  padding-bottom: 130px;
   margin-bottom: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  block-size: clamp(325px, 40vw, 368px);
-  border: 2px solid #000;
+  outline: 2px solid #000;
   text-align: center;
   background-color: #fff;
   text-transform: uppercase;
@@ -235,6 +221,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  font-variation-settings: 'wght' var(--font-weight-regular);
 }
 
 .card__actions {
@@ -330,7 +317,6 @@ dialog {
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(3px);
 }
 
 .dialog__content {
@@ -359,6 +345,10 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
+  .header {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
   .button-save {
     flex-direction: column;
   }
