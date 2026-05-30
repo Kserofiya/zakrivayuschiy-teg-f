@@ -98,6 +98,26 @@ button {
   box-shadow: 2px 2px 0 0 #000;
 }
 
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: #000000;
+}
+
 .header {
   margin-bottom: 100px;
   display: flex;
@@ -223,8 +243,75 @@ button {
   align-self: end;
 }
 
+.like-icon {
+  cursor: pointer;
+}
+
+.like-icon .heart {
+  transform-origin: 50% 50%;
+}
+
+.like-icon .contour {
+  transition: fill 0.1s linear 0s;
+}
+
+.like-icon .core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon .main-body {
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  fill: var(--animation-fill-color);
+  animation: sparks-visibility 0.3s ease-in 0.3s 1;
+}
+
 .card__like-button {
-  padding: 10px 35px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  inline-size: 130px;
 }
 
 .button-save {
