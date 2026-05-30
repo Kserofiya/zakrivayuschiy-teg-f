@@ -1,1 +1,1 @@
-https://github.com/Kserofiya/zakrivayuschiy-teg-f
+https://kserofiya.github.io/zakrivayuschiy-teg-f/
