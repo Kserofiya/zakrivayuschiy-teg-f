@@ -2,8 +2,8 @@
 :root {
     --font-primary: 'Inter', Arial, sans-serif;
     --font-accent: 'PressStart2P', monospace;
-    --font-weight-regular: 410;
-    --font-weight-bold: 715;
+    --font-weight-regular: 400;
+    --font-weight-bold: 785;
     --background-gradient:
         repeating-linear-gradient(
             to right,
@@ -27,4 +27,6 @@
         );
     --container-width: clamp(375px, 90vw, 700px);
     --text-stroke-color: #fff;
+    --button-bg-color: #ffffff;
+    --button-text-color: #ffffff;
 }
